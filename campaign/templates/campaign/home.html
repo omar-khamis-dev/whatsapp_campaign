@@ -1,0 +1,19 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8" />
+    <title>{% trans "Home" %}</title>
+</head>
+<body>
+    <h1>{{ greeting }}</h1>
+
+    <p>{% trans "Choose your language:" %}</p>
+    <ul>
+        <li><a href="/i18n/setlang/?next={{ request.path }}&language=en">English</a></li>
+        <li><a href="/i18n/setlang/?next={{ request.path }}&language=ar">العربية</a></li>
+        <li><a href="/i18n/setlang/?next={{ request.path }}&language=de">Deutsch</a></li>
+        <li><a href="/i18n/setlang/?next={{ request.path }}&language=nl-be">Belgian Dutch</a></li>
+    </ul>
+</body>
+</html>
