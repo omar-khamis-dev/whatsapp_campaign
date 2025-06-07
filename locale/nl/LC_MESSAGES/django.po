@@ -21,59 +21,59 @@ msgstr ""
 #: .\campaign\templates\campaign\dashboard.html:7
 #: .\campaign\templates\campaign\dashboard.html:18 .\campaign\views.py:10
 msgid "Dashboard"
-msgstr "Armaturenbrett"
+msgstr "Dashboard"
 
 #: .\campaign\templates\campaign\dashboard.html:36
 msgid "Users"
-msgstr "Benutzer"
+msgstr "Gebruikers"
 
 #: .\campaign\templates\campaign\dashboard.html:37
 msgid "Campaigns"
-msgstr "Kampagnen"
+msgstr "Campagnes"
 
 #: .\campaign\templates\campaign\dashboard.html:38
 msgid "Messages Sent"
-msgstr "Nachrichten gesendet"
+msgstr "Berichten verzonden"
 
 #: .\campaign\templates\campaign\dashboard.html:39
 msgid "Success Rate"
-msgstr "Erfolgsrate"
+msgstr "Slagingspercentage"
 
 #: .\campaign\templates\campaign\dashboard.html:43
 msgid "Recent Activity"
-msgstr "Jüngste Aktivität"
+msgstr "Recente activiteit"
 
 #: .\campaign\templates\campaign\dashboard.html:45
 msgid "Campaign 'Ramadan Offer' sent to 5,000 users"
-msgstr "Kampagne 'Ramadan Offer' an 5.000 Benutzer gesendet"
+msgstr "Campagne 'Ramadan -aanbieding' verzonden naar 5.000 gebruikers"
 
 #: .\campaign\templates\campaign\dashboard.html:46
 msgid "New user 'admin@domain.com' registered"
-msgstr "Neuer Benutzer 'admin@domain.com' registriert"
+msgstr "Nieuwe gebruiker 'admin@domain.com' geregistreerd"
 
 #: .\campaign\templates\campaign\dashboard.html:47
 msgid "Database backup completed"
-msgstr "Datenbanksicherung abgeschlossen"
+msgstr "Database -back -up is voltooid"
 
 #: .\campaign\templates\campaign\home.html:6
 msgid "Home"
-msgstr "Heim"
+msgstr "Thuis"
 
 #: .\campaign\templates\campaign\home.html:34
 msgid "Choose your language:"
-msgstr "Wählen Sie Ihre Sprache:"
+msgstr "Kies uw taal:"
 
 #: .\campaign\templates\campaign\home.html:45
 msgid "Change language"
-msgstr "Sprache ändern"
+msgstr "Verander taal"
 
 #: .\campaign\views.py:5
 msgid "Welcome to the WhatsApp Campaign System"
-msgstr "Willkommen beim WhatsApp-Kampagnensystem"
+msgstr "Welkom bij het WhatsApp-campagnesysteem"
 
 #: .\whatsapp_campaign\settings.py:121
 msgid "English"
-msgstr "Englisch"
+msgstr "Engels"
 
 #: .\whatsapp_campaign\settings.py:122
 msgid "Arabic"
@@ -81,8 +81,8 @@ msgstr "Arabisch"
 
 #: .\whatsapp_campaign\settings.py:123
 msgid "German"
-msgstr "Deutsch"
+msgstr "Duits"
 
 #: .\whatsapp_campaign\settings.py:124
 msgid "Dutch"
-msgstr "Niederländisch"
+msgstr "Nederlands"

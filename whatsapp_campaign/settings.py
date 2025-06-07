@@ -63,6 +63,7 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.request',
+                'django.template.context_processors.i18n',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -120,7 +121,7 @@ LANGUAGES = [
     ('en', _('English')),
     ('ar', _('Arabic')),
     ('de', _('German')),
-    ('nl-be', _('Belgian Dutch')),  # الفلمنكية/الهولندية البلجيكية
+    ('nl', _('Dutch')),
 ]
 
 LOCALE_PATHS = [

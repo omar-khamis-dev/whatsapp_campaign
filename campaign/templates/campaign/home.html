@@ -1,19 +1,48 @@
 {% load i18n %}
 <!DOCTYPE html>
-<html lang="{{ LANGUAGE_CODE }}">
+<html lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_CODE == 'ar' %}rtl{% else %}ltr{% endif %}">
 <head>
     <meta charset="UTF-8" />
     <title>{% trans "Home" %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            direction: inherit;
+            text-align: start;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        select, button {
+            padding: 5px;
+            font-size: 1rem;
+        }
+
+        {% if LANGUAGE_CODE == 'ar' %}
+        body {
+            text-align: right;
+        }
+        {% endif %}
+    </style>
 </head>
 <body>
     <h1>{{ greeting }}</h1>
 
     <p>{% trans "Choose your language:" %}</p>
-    <ul>
-        <li><a href="/i18n/setlang/?next={{ request.path }}&language=en">English</a></li>
-        <li><a href="/i18n/setlang/?next={{ request.path }}&language=ar">العربية</a></li>
-        <li><a href="/i18n/setlang/?next={{ request.path }}&language=de">Deutsch</a></li>
-        <li><a href="/i18n/setlang/?next={{ request.path }}&language=nl-be">Belgian Dutch</a></li>
-    </ul>
+
+    <form action="{% url 'set_language' %}" method="post">
+        {% csrf_token %}
+        <select name="language">
+            <option value="en" {% if LANGUAGE_CODE == "en" %}selected{% endif %}>English</option>
+            <option value="ar" {% if LANGUAGE_CODE == "ar" %}selected{% endif %}>العربية</option>
+            <option value="de" {% if LANGUAGE_CODE == "de" %}selected{% endif %}>Deutsch</option>
+            <option value="nl" {% if LANGUAGE_CODE == "nl" %}selected{% endif %}>Nederlands</option>
+        </select>
+        <input type="hidden" name="next" value="{{ request.path }}">
+        <button type="submit">{% trans "Change language" %}</button>
+    </form>
 </body>
 </html>

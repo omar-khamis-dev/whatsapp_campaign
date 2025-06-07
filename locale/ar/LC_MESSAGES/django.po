@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-29 04:29+0300\n"
+"POT-Creation-Date: 2025-05-30 18:34+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,20 +16,73 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-#: .\whatsapp_campaign\settings.py:120
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: .\campaign\templates\campaign\dashboard.html:7
+#: .\campaign\templates\campaign\dashboard.html:18 .\campaign\views.py:10
+msgid "Dashboard"
+msgstr "لوحة القيادة"
+
+#: .\campaign\templates\campaign\dashboard.html:36
+msgid "Users"
+msgstr "المستخدمون"
+
+#: .\campaign\templates\campaign\dashboard.html:37
+msgid "Campaigns"
+msgstr "الحملات"
+
+#: .\campaign\templates\campaign\dashboard.html:38
+msgid "Messages Sent"
+msgstr "الرسائل المرسلة"
+
+#: .\campaign\templates\campaign\dashboard.html:39
+msgid "Success Rate"
+msgstr "معدل النجاح"
+
+#: .\campaign\templates\campaign\dashboard.html:43
+msgid "Recent Activity"
+msgstr "النشاط الحديث"
+
+#: .\campaign\templates\campaign\dashboard.html:45
+msgid "Campaign 'Ramadan Offer' sent to 5,000 users"
+msgstr "تم إرسال حملة \"عرض رمضان\" إلى 5000 مستخدم"
+
+#: .\campaign\templates\campaign\dashboard.html:46
+msgid "New user 'admin@domain.com' registered"
+msgstr "مستخدم جديد \"admin@domain.com\" مسجل"
+
+#: .\campaign\templates\campaign\dashboard.html:47
+msgid "Database backup completed"
+msgstr "اكتمال النسخ الاحتياطي لقاعدة البيانات"
+
+#: .\campaign\templates\campaign\home.html:6
+msgid "Home"
+msgstr "الرئيسية"
+
+#: .\campaign\templates\campaign\home.html:34
+msgid "Choose your language:"
+msgstr "اختر لغتك:"
+
+#: .\campaign\templates\campaign\home.html:45
+msgid "Change language"
+msgstr "تغيير اللغة"
+
+#: .\campaign\views.py:5
+msgid "Welcome to the WhatsApp Campaign System"
+msgstr "مرحباً بكم في نظام حملة WhatsApp"
+
+#: .\whatsapp_campaign\settings.py:121
 msgid "English"
 msgstr "الإنجليزية"
 
-#: .\whatsapp_campaign\settings.py:121
+#: .\whatsapp_campaign\settings.py:122
 msgid "Arabic"
 msgstr "عربي"
 
-#: .\whatsapp_campaign\settings.py:122
+#: .\whatsapp_campaign\settings.py:123
 msgid "German"
 msgstr "الألمانية"
 
-#: .\whatsapp_campaign\settings.py:123
-msgid "Belgian Dutch"
+#: .\whatsapp_campaign\settings.py:124
+msgid "Dutch"
 msgstr "الهولندية"
