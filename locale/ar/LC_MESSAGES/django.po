@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-30 18:34+0300\n"
+"POT-Creation-Date: 2025-06-11 04:22+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,58 +18,401 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: .\campaign\templates\campaign\dashboard.html:7
-#: .\campaign\templates\campaign\dashboard.html:18 .\campaign\views.py:10
-msgid "Dashboard"
-msgstr "لوحة القيادة"
+#: .\campaign\forms.py:8
+msgid "Contact file"
+msgstr "ملف الاتصال"
 
-#: .\campaign\templates\campaign\dashboard.html:36
-msgid "Users"
-msgstr "المستخدمون"
+#: .\campaign\forms.py:9
+msgid "Choose a CSV, Excel, or VCF file (.csv, .xlsx, .vcf)"
+msgstr "اختر ملف CSV أو Excel أو VCF (.csv ، .xlsx ، .vcf)"
 
-#: .\campaign\templates\campaign\dashboard.html:37
+#: .\campaign\forms.py:14
+msgid "Group name"
+msgstr "اسم المجموعة"
+
+#: .\campaign\forms.py:16 .\campaign\forms.py:28
+#: .\campaign\templates\campaign\campaign_list.html:20
+msgid "Group"
+msgstr "مجموعة"
+
+#: .\campaign\forms.py:17
+msgid "A new group will be created automatically. You can rename it."
+msgstr "سيتم إنشاء مجموعة جديدة تلقائيًا.يمكنك إعادة تسميته."
+
+#: .\campaign\forms.py:23
+msgid "Search by name, phone, or email"
+msgstr "ابحث بالاسم أو الهاتف أو البريد الإلكتروني"
+
+#: .\campaign\forms.py:31
+msgid "All groups"
+msgstr "جميع المجموعات"
+
+#: .\campaign\forms.py:35 .\campaign\models.py:50
+#: .\campaign\templates\campaign\campaign_detail_report.html:38
+#: .\campaign\templates\campaign\campaign_list.html:22
+#: .\campaign\templates\campaign\contact_list.html:67
+#: .\campaign\templates\campaign\top_campaign.html:17
+msgid "Status"
+msgstr "حالة"
+
+#: .\campaign\forms.py:36
+msgid "All statuses"
+msgstr "جميع الحالات"
+
+#: .\campaign\forms.py:41 .\campaign\templates\campaign\contact_list.html:69
+msgid "Gender"
+msgstr "جنس"
+
+#: .\campaign\forms.py:43
+msgid "All"
+msgstr "الجميع"
+
+#: .\campaign\forms.py:44
+msgid "Male"
+msgstr "ذكر"
+
+#: .\campaign\forms.py:45
+msgid "Female"
+msgstr "أنثى"
+
+#: .\campaign\forms.py:59 .\campaign\models.py:45
+#: .\campaign\templates\campaign\campaign_reports.html:13
+#: .\campaign\templates\campaign\create_campaign.html:13
+msgid "Campaign Name"
+msgstr "اسم الحملة"
+
+#: .\campaign\forms.py:60 .\campaign\models.py:46
+#: .\campaign\templates\campaign\create_campaign.html:17
+msgid "Target Group"
+msgstr "المجموعة المستهدفة"
+
+#: .\campaign\forms.py:61 .\campaign\models.py:47
+#: .\campaign\templates\campaign\create_campaign.html:21
+msgid "Message Text"
+msgstr "نص الرسالة"
+
+#: .\campaign\forms.py:62
+#: .\campaign\templates\campaign\create_campaign.html:25
+msgid "Attachment"
+msgstr "مرفق"
+
+#: .\campaign\forms.py:63 .\campaign\models.py:49
+#: .\campaign\templates\campaign\create_campaign.html:29
+msgid "Scheduled Date & Time"
+msgstr "التاريخ والوقت المجدول"
+
+#: .\campaign\migrations\0001_initial.py:28 .\campaign\models.py:12
+msgid "Not sent"
+msgstr "لم يتم إرسالها"
+
+#: .\campaign\migrations\0001_initial.py:29 .\campaign\models.py:13
+#: .\campaign\templates\campaign\campaign_detail_report.html:16
+#: .\campaign\templates\campaign\campaign_reports.html:14
+msgid "Sent"
+msgstr "مرسل"
+
+#: .\campaign\migrations\0001_initial.py:30 .\campaign\models.py:14
+msgid "Rejected"
+msgstr "مرفوض"
+
+#: .\campaign\models.py:40
+#: .\campaign\templates\campaign\campaign_detail_report.html:18
+#: .\campaign\templates\campaign\campaign_list.html:34
+msgid "Pending"
+msgstr "قيد الانتظار"
+
+#: .\campaign\models.py:41 .\campaign\templates\campaign\campaign_list.html:36
+msgid "Sending"
+msgstr "إرسال"
+
+#: .\campaign\models.py:42 .\campaign\templates\campaign\campaign_list.html:38
+msgid "Completed"
+msgstr "مكتمل"
+
+#: .\campaign\models.py:43
+#: .\campaign\templates\campaign\campaign_detail_report.html:17
+#: .\campaign\templates\campaign\campaign_list.html:40
+#: .\campaign\templates\campaign\campaign_reports.html:15
+msgid "Failed"
+msgstr "فشل"
+
+#: .\campaign\models.py:48
+msgid "Attachment (optional)"
+msgstr "المرفق (اختياري)"
+
+#: .\campaign\models.py:54
+msgid "Campaign"
+msgstr "حملة"
+
+#: .\campaign\models.py:55 .\campaign\templates\base.html:38
+#: .\campaign\templates\base.html:91
+#: .\campaign\templates\campaign\campaign_list.html:4
+#: .\campaign\templates\campaign\campaign_list.html:9
+#: .\campaign\templates\campaign\dashboard.html:67 .\campaign\views.py:234
 msgid "Campaigns"
 msgstr "الحملات"
 
-#: .\campaign\templates\campaign\dashboard.html:38
-msgid "Messages Sent"
-msgstr "الرسائل المرسلة"
+#: .\campaign\templates\base.html:7 .\campaign\templates\base.html:54
+msgid "WhatsApp Campaign System"
+msgstr "نظام حملة WhatsApp"
 
-#: .\campaign\templates\campaign\dashboard.html:39
-msgid "Success Rate"
-msgstr "معدل النجاح"
+#: .\campaign\templates\base.html:30 .\campaign\templates\base.html:84
+msgid "Menu"
+msgstr "قائمة طعام"
 
-#: .\campaign\templates\campaign\dashboard.html:43
-msgid "Recent Activity"
-msgstr "النشاط الحديث"
+#: .\campaign\templates\base.html:33 .\campaign\templates\base.html:86
+#: .\campaign\templates\campaign\dashboard.html:4
+#: .\campaign\templates\campaign\dashboard.html:47 .\campaign\views.py:42
+msgid "Dashboard"
+msgstr "لوحة القيادة"
 
-#: .\campaign\templates\campaign\dashboard.html:45
-msgid "Campaign 'Ramadan Offer' sent to 5,000 users"
-msgstr "تم إرسال حملة \"عرض رمضان\" إلى 5000 مستخدم"
-
-#: .\campaign\templates\campaign\dashboard.html:46
-msgid "New user 'admin@domain.com' registered"
-msgstr "مستخدم جديد \"admin@domain.com\" مسجل"
-
-#: .\campaign\templates\campaign\dashboard.html:47
-msgid "Database backup completed"
-msgstr "اكتمال النسخ الاحتياطي لقاعدة البيانات"
-
-#: .\campaign\templates\campaign\home.html:6
+#: .\campaign\templates\base.html:34 .\campaign\templates\base.html:87
+#: .\campaign\templates\campaign\home.html:4 .\campaign\views.py:17
 msgid "Home"
 msgstr "الرئيسية"
 
-#: .\campaign\templates\campaign\home.html:34
+#: .\campaign\templates\base.html:35 .\campaign\templates\base.html:88
+#: .\campaign\templates\campaign\import_contacts.html:5
+#: .\campaign\templates\campaign\import_contacts.html:41
+#: .\campaign\views.py:55
+msgid "Import Contacts"
+msgstr "استيراد جهات الاتصال"
+
+#: .\campaign\templates\base.html:36 .\campaign\templates\base.html:89
+msgid "Contacts"
+msgstr "جهات الاتصال"
+
+#: .\campaign\templates\base.html:37 .\campaign\templates\base.html:90
+#: .\campaign\templates\campaign\create_campaign.html:4
+#: .\campaign\templates\campaign\create_campaign.html:33
+msgid "Create Campaign"
+msgstr "إنشاء حملة"
+
+#: .\campaign\templates\base.html:39
+#: .\campaign\templates\campaign\campaign_reports.html:4
+#: .\campaign\templates\campaign\campaign_reports.html:8
+#: .\campaign\views.py:239 .\campaign\views.py:260
+msgid "Campaign Reports"
+msgstr "تقارير الحملة"
+
+#: .\campaign\templates\base.html:40 .\campaign\templates\base.html:93
+msgid "Top Campaign"
+msgstr "أعلى حملة"
+
+#: .\campaign\templates\base.html:78
+msgid "All rights reserved"
+msgstr "جميع الحقوق محفوظة"
+
+#: .\campaign\templates\base.html:92
+msgid "reports"
+msgstr "التقارير"
+
+#: .\campaign\templates\campaign\campaign_detail_report.html:4
+msgid "Campaign Reports:"
+msgstr "تقارير الحملة:"
+
+#: .\campaign\templates\campaign\campaign_detail_report.html:9
+msgid "Campaign Report:"
+msgstr "تقرير الحملة:"
+
+#: .\campaign\templates\campaign\campaign_detail_report.html:14
+msgid "Status Summary"
+msgstr "ملخص الحالة"
+
+#: .\campaign\templates\campaign\campaign_detail_report.html:22
+msgid "Reactions"
+msgstr "ردود الفعل"
+
+#: .\campaign\templates\campaign\campaign_detail_report.html:24
+msgid "Sent but not delivered"
+msgstr "أرسل ولكن لم يتم تسليمه"
+
+#: .\campaign\templates\campaign\campaign_detail_report.html:25
+msgid "Delivered, unread"
+msgstr "تسليم ، غير مقروء"
+
+#: .\campaign\templates\campaign\campaign_detail_report.html:26
+msgid "Read"
+msgstr "يقرأ"
+
+#: .\campaign\templates\campaign\campaign_detail_report.html:27
+msgid "Replied"
+msgstr "رد"
+
+#: .\campaign\templates\campaign\campaign_detail_report.html:28
+msgid "Reacted"
+msgstr "كان رد فعل"
+
+#: .\campaign\templates\campaign\campaign_detail_report.html:37
+msgid "Recipient"
+msgstr "متلقي"
+
+#: .\campaign\templates\campaign\campaign_detail_report.html:39
+msgid "Reaction"
+msgstr "رد فعل"
+
+#: .\campaign\templates\campaign\campaign_detail_report.html:40
+msgid "Sent At"
+msgstr "أرسلت في"
+
+#: .\campaign\templates\campaign\campaign_list.html:11
+msgid "New Campaign"
+msgstr "حملة جديدة"
+
+#: .\campaign\templates\campaign\campaign_list.html:19
+msgid "Name"
+msgstr "اسم"
+
+#: .\campaign\templates\campaign\campaign_list.html:21
+#: .\campaign\templates\campaign\top_campaign.html:14
+msgid "Scheduled At"
+msgstr "من المقرر في"
+
+#: .\campaign\templates\campaign\campaign_list.html:23
+msgid "Actions"
+msgstr "الإجراءات"
+
+#: .\campaign\templates\campaign\campaign_list.html:44
+msgid "Start"
+msgstr "يبدأ"
+
+#: .\campaign\templates\campaign\campaign_list.html:46
+msgid "Details"
+msgstr "تفاصيل"
+
+#: .\campaign\templates\campaign\campaign_list.html:51
+#: .\campaign\templates\campaign\campaign_reports.html:31
+msgid "No campaigns found."
+msgstr "لم يتم العثور على حملات."
+
+#: .\campaign\templates\campaign\campaign_reports.html:16
+msgid "Duration (s)"
+msgstr "المدة (ق)"
+
+#: .\campaign\templates\campaign\campaign_reports.html:17
+#, fuzzy, python-format
+#| msgid "Success Rate"
+msgid "Success Rate (%%)"
+msgstr "معدل النجاح"
+
+#: .\campaign\templates\campaign\contact_list.html:4
+#: .\campaign\templates\campaign\contact_list.html:59 .\campaign\views.py:183
+msgid "Contact List"
+msgstr "قائمة الاتصال"
+
+#: .\campaign\templates\campaign\contact_list.html:46
+msgid "Search Contacts"
+msgstr "جهات الاتصال البحث"
+
+#: .\campaign\templates\campaign\contact_list.html:53
+msgid "Search"
+msgstr "يبحث"
+
+#: .\campaign\templates\campaign\contact_list.html:64
+msgid "Full Name"
+msgstr "الاسم الكامل"
+
+#: .\campaign\templates\campaign\contact_list.html:65
+msgid "Phone Number"
+msgstr "رقم التليفون"
+
+#: .\campaign\templates\campaign\contact_list.html:66
+msgid "Email"
+msgstr "بريد إلكتروني"
+
+#: .\campaign\templates\campaign\contact_list.html:68
+msgid "Groups"
+msgstr "مجموعات"
+
+#: .\campaign\templates\campaign\contact_list.html:70
+msgid "Interests"
+msgstr "المصالح"
+
+#: .\campaign\templates\campaign\contact_list.html:92
+msgid "No contacts found."
+msgstr "لم يتم العثور على جهات اتصال."
+
+#: .\campaign\templates\campaign\create_campaign.html:8
+#: .\campaign\views.py:218
+msgid "Create New Campaign"
+msgstr "إنشاء حملة جديدة"
+
+#: .\campaign\templates\campaign\dashboard.html:52
+msgid "Total Contacts"
+msgstr "إجمالي جهات الاتصال"
+
+#: .\campaign\templates\campaign\dashboard.html:57
+msgid "Total Groups"
+msgstr "المجموعات الكلية"
+
+#: .\campaign\templates\campaign\dashboard.html:62
+msgid "Messages Sent"
+msgstr "الرسائل المرسلة"
+
+#: .\campaign\templates\campaign\dashboard.html:72
+msgid "Users"
+msgstr "المستخدمون"
+
+#: .\campaign\templates\campaign\dashboard.html:77
+msgid "Success Rate"
+msgstr "معدل النجاح"
+
+#: .\campaign\templates\campaign\home.html:45
 msgid "Choose your language:"
 msgstr "اختر لغتك:"
 
-#: .\campaign\templates\campaign\home.html:45
+#: .\campaign\templates\campaign\home.html:56
 msgid "Change language"
 msgstr "تغيير اللغة"
 
-#: .\campaign\views.py:5
+#: .\campaign\templates\campaign\import_contacts.html:53
+msgid "Choose File (CSV or Excel)"
+msgstr "اختر ملف (CSV أو Excel)"
+
+#: .\campaign\templates\campaign\import_contacts.html:57
+msgid "Group Name (optional)"
+msgstr "اسم المجموعة (اختياري)"
+
+#: .\campaign\templates\campaign\import_contacts.html:62
+msgid "Preview Data"
+msgstr "معاينة البيانات"
+
+#: .\campaign\templates\campaign\import_contacts.html:67
+msgid "Preview of the first 50 contacts"
+msgstr "معاينة أول 50 جهة اتصال"
+
+#: .\campaign\templates\campaign\import_contacts.html:72
+msgid "Save Contacts"
+msgstr "حفظ جهات الاتصال"
+
+#: .\campaign\templates\campaign\top_campaign.html:4
+#: .\campaign\templates\campaign\top_campaign.html:8 .\campaign\views.py:281
+msgid "Top Engaged Campaign"
+msgstr "أفضل حملة مشاركة"
+
+#: .\campaign\templates\campaign\top_campaign.html:20
+msgid "Engagement Score"
+msgstr "درجة المشاركة"
+
+#: .\campaign\templates\campaign\top_campaign.html:25
+msgid "View Full Report"
+msgstr "عرض التقرير الكامل"
+
+#: .\campaign\templates\campaign\top_campaign.html:30
+msgid "No campaigns with engagement data available."
+msgstr "لا توجد حملات مع بيانات المشاركة المتاحة."
+
+#: .\campaign\views.py:18
 msgid "Welcome to the WhatsApp Campaign System"
 msgstr "مرحباً بكم في نظام حملة WhatsApp"
+
+#: .\campaign\views.py:95
+msgid "Contacts have been saved successfully."
+msgstr "تم حفظ جهات الاتصال بنجاح."
+
+#: .\campaign\views.py:223
+msgid "Campaign created successfully."
+msgstr "أنشأت الحملة بنجاح."
 
 #: .\whatsapp_campaign\settings.py:121
 msgid "English"
@@ -86,3 +429,36 @@ msgstr "الألمانية"
 #: .\whatsapp_campaign\settings.py:124
 msgid "Dutch"
 msgstr "الهولندية"
+
+#~ msgid "Monthly Message Stats"
+#~ msgstr "احصائيات الرسائل الشهرية"
+
+#~ msgid "My System"
+#~ msgstr "نظامي"
+
+#~ msgid "Developed by"
+#~ msgstr "تم تطويره بواسطة"
+
+#~ msgid "Recent Activity"
+#~ msgstr "النشاط الحديث"
+
+#~ msgid "Campaign 'Ramadan Offer' sent to 5,000 users"
+#~ msgstr "تم إرسال حملة \"عرض رمضان\" إلى 5000 مستخدم"
+
+#~ msgid "New user 'admin@domain.com' registered"
+#~ msgstr "مستخدم جديد \"admin@domain.com\" مسجل"
+
+#~ msgid "Database backup completed"
+#~ msgstr "اكتمال النسخ الاحتياطي لقاعدة البيانات"
+
+#~ msgid "Welcome to the system"
+#~ msgstr "مرحبا بكم في النظام"
+
+#~ msgid "Use the menu above to navigate through the system."
+#~ msgstr "استخدم القائمة أعلاه للتنقل عبر النظام."
+
+#~ msgid "Missing required columns: full_name, phone_number"
+#~ msgstr "الأعمدة المفقودة المطلوبة: full_name ، phone_number"
+
+#~ msgid "Error reading file: "
+#~ msgstr "ملف قراءة الخطأ:"

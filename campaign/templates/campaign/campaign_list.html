@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Campaigns" %}{% endblock %}
+{% block page_title %} {{ page_title }} {% endblock %}
+{% block content %}
+<div class="max-w-5xl mx-auto bg-white shadow p-6 rounded mt-6">
+    <div class="flex justify-between items-center mb-4">
+        <h1 class="text-xl font-semibold text-gray-800">{% trans "Campaigns" %}</h1>
+        <a href="{% url 'create_campaign' %}" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+            {% trans "New Campaign" %}
+        </a>
+    </div>
+
+    <div class="overflow-x-auto">
+        <table class="min-w-full border text-sm text-left">
+            <thead class="bg-gray-100">
+                <tr>
+                    <th class="p-2">{% trans "Name" %}</th>
+                    <th class="p-2">{% trans "Group" %}</th>
+                    <th class="p-2">{% trans "Scheduled At" %}</th>
+                    <th class="p-2">{% trans "Status" %}</th>
+                    <th class="p-2">{% trans "Actions" %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for campaign in campaigns %}
+                    <tr class="border-b hover:bg-gray-50">
+                        <td class="p-2">{{ campaign.name }}</td>
+                        <td class="p-2">{{ campaign.group.name }}</td>
+                        <td class="p-2">{{ campaign.scheduled_at|date:"Y-m-d H:i" }}</td>
+                        <td class="p-2">
+                            {% if campaign.status == 'pending' %}
+                                <span class="text-yellow-600 font-medium">{% trans "Pending" %}</span>
+                            {% elif campaign.status == 'sending' %}
+                                <span class="text-blue-600 font-medium">{% trans "Sending" %}</span>
+                            {% elif campaign.status == 'completed' %}
+                                <span class="text-green-600 font-medium">{% trans "Completed" %}</span>
+                            {% elif campaign.status == 'failed' %}
+                                <span class="text-red-600 font-medium">{% trans "Failed" %}</span>
+                            {% endif %}
+                        </td>
+                        <td class="p-2">
+                            <a href="#" class="text-blue-600 hover:underline">{% trans "Start" %}</a>
+                            |
+                            <a href="#" class="text-gray-600 hover:underline">{% trans "Details" %}</a>
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="5" class="p-4 text-center text-gray-500">{% trans "No campaigns found." %}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

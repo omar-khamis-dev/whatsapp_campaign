@@ -1,5 +1,14 @@
+{% extends 'base.html' %}
 {% load i18n %}
-<!DOCTYPE html>
+
+{% block title %}{% trans "Home" %}{% endblock %}
+{% block page_title %} {{ page_title }} {% endblock %}
+{% block content %}
+    {% comment %} <h1 class="text-2xl font-bold mb-4">{% trans "Welcome to the system" %}</h1>
+    <p>{% trans "Use the menu above to navigate through the system." %}</p> {% endcomment %}
+
+
+{% comment %} <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_CODE == 'ar' %}rtl{% else %}ltr{% endif %}">
 <head>
     <meta charset="UTF-8" />
@@ -28,7 +37,7 @@
         {% endif %}
     </style>
 </head>
-<body>
+<body> {% endcomment %}
     <h1>{{ greeting }}</h1>
 
     <p>{% trans "Choose your language:" %}</p>
@@ -44,5 +53,5 @@
         <input type="hidden" name="next" value="{{ request.path }}">
         <button type="submit">{% trans "Change language" %}</button>
     </form>
-</body>
-</html>
+
+{% endblock %}

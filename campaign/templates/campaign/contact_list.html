@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Contact List" %}{% endblock %}
+{% block page_title %} {{ page_title }} {% endblock %}
+{% block content %}
+    {% comment %} <h1 class="text-2xl font-bold mb-4">{% trans "Welcome to the system" %}</h1>
+    <p>{% trans "Use the menu above to navigate through the system." %}</p> {% endcomment %}
+
+
+{% comment %} <!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_CODE == 'ar' %}rtl{% else %}ltr{% endif %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans "Contact List" %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: '{{ LANGUAGE_CODE|yesno:"Tajawal,Roboto" }}', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen"> {% endcomment %}
+    <!-- Navbar -->
+    {% comment %} <header class="bg-white shadow p-4 flex justify-between items-center">
+        <h1 class="text-xl font-bold">{% trans "Contacts" %}</h1>
+        <form action="{% url 'set_language' %}" method="post" class="inline">
+            {% csrf_token %}
+            <select name="language" onchange="this.form.submit()" class="border rounded px-2 py-1">
+                <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>English</option>
+                <option value="ar" {% if LANGUAGE_CODE == 'ar' %}selected{% endif %}>العربية</option>
+                <option value="de" {% if LANGUAGE_CODE == 'de' %}selected{% endif %}>Deutsch</option>
+                <option value="nl" {% if LANGUAGE_CODE == 'nl' %}selected{% endif %}>Nederlands</option>
+            </select>
+            <input type="hidden" name="next" value="{{ request.path }}">
+        </form>
+    </header> {% endcomment %}
+
+    <!-- Content -->
+    <main class="p-4">
+        <div class="bg-white p-6 rounded-2xl shadow mb-6">
+            <h2 class="text-lg font-semibold mb-4">{% trans "Search Contacts" %}</h2>
+            <form method="get" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {{ form.query.label_tag }} {{ form.query }}
+                {{ form.group.label_tag }} {{ form.group }}
+                {{ form.status.label_tag }} {{ form.status }}
+                {{ form.gender.label_tag }} {{ form.gender }}
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                    {% trans "Search" %}
+                </button>
+            </form>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow">
+            <h2 class="text-lg font-semibold mb-4">{% trans "Contact List" %}</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200 text-sm text-left rtl:text-right">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-4 py-2">{% trans "Full Name" %}</th>
+                            <th class="px-4 py-2">{% trans "Phone Number" %}</th>
+                            <th class="px-4 py-2">{% trans "Email" %}</th>
+                            <th class="px-4 py-2">{% trans "Status" %}</th>
+                            <th class="px-4 py-2">{% trans "Groups" %}</th>
+                            <th class="px-4 py-2">{% trans "Gender" %}</th>
+                            <th class="px-4 py-2">{% trans "Interests" %}</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        {% for contact in contacts %}
+                        <tr>
+                            <td class="px-4 py-2">{{ contact.full_name }}</td>
+                            <td class="px-4 py-2">{{ contact.phone_number }}</td>
+                            <td class="px-4 py-2">{{ contact.email|default:"-" }}</td>
+                            <td class="px-4 py-2">{{ contact.get_status_display }}</td>
+                            <td class="px-4 py-2">
+                                {% for group in contact.groups.all %}
+                                    <span class="inline-block bg-gray-200 rounded px-2 text-xs">{{ group.name }}</span>{% if not forloop.last %}, {% endif %}
+                                {% empty %}
+                                    -
+                                {% endfor %}
+                            </td>
+                            <td class="px-4 py-2">{{ contact.gender }}</td>
+                            <td class="px-4 py-2">{{ contact.interests|default:"-" }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="7" class="text-center py-4 text-gray-500">{% trans "No contacts found." %}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+{% endblock %}

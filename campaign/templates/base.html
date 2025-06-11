@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_CODE == 'ar' %}rtl{% else %}ltr{% endif %}">
+{% load i18n %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% trans "WhatsApp Campaign System" %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* دعم RTL لـ Tailwind */
+        [dir="rtl"] .rtl\:ml-auto {
+            margin-right: auto;
+            margin-left: 0;
+        }
+        [dir="rtl"] .rtl\:mr-4 {
+            margin-left: 1rem;
+            margin-right: 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex">
+
+    <!-- ✅ Sidebar -->
+    <aside id="sidebar" class="bg-white w-64 min-h-screen hidden lg:block shadow-lg">
+        <div class="p-4 text-blue-700 font-bold text-lg border-b">
+            {% trans "Menu" %}
+        </div>
+        <nav class="p-4 space-y-2 text-sm text-gray-700">
+            <a href="{% url 'dashboard' %}" class="block hover:bg-blue-100 px-2 py-1 rounded">{% trans "Dashboard" %}</a>
+            <a href="{% url 'home' %}" class="block hover:bg-blue-100 px-2 py-1 rounded">{% trans "Home" %}</a>
+            <a href="{% url 'import_contacts' %}" class="block hover:bg-blue-100 px-2 py-1 rounded">{% trans "Import Contacts" %}</a>
+            <a href="{% url 'contact_list' %}" class="block hover:bg-blue-100 px-2 py-1 rounded">{% trans "Contacts" %}</a>
+            <a href="{% url 'create_campaign' %}" class="block hover:bg-blue-100 px-2 py-1 rounded">{% trans "Create Campaign" %}</a>
+            <a href="{% url 'campaign_list' %}" class="block hover:bg-blue-100 px-2 py-1 rounded">{% trans "Campaigns" %}</a>
+            <a href="{% url 'reports' %}" class="block hover:bg-blue-100 px-2 py-1 rounded">{% trans "Campaign Reports" %}</a>
+            <a href="{% url 'top_campaign' %}" class="block hover:bg-blue-100 px-2 py-1 rounded">{% trans "Top Campaign" %}</a>
+        </nav>
+    </aside>
+
+    <!-- ✅ محتوى الصفحة -->
+    <div class="flex-1 flex flex-col">
+        <!-- Header -->
+        <header class="bg-white shadow px-4 py-3 flex justify-between items-center">
+            <!-- زر القائمة للجوال -->
+            <button id="menu-toggle" class="lg:hidden text-xl">
+                ☰
+            </button>
+
+            <h1 class="text-lg font-semibold text-blue-700">
+                {% block page_title %}{% trans "WhatsApp Campaign System" %}{% endblock %}
+            </h1>
+
+            <!-- لغة -->
+            <form action="{% url 'set_language' %}" method="post" class="text-sm">
+                {% csrf_token %}
+                <select name="language" onchange="this.form.submit()" class="border rounded px-2 py-1">
+                    <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>English</option>
+                    <option value="ar" {% if LANGUAGE_CODE == 'ar' %}selected{% endif %}>العربية</option>
+                    <option value="de" {% if LANGUAGE_CODE == 'de' %}selected{% endif %}>Deutsch</option>
+                    <option value="nl" {% if LANGUAGE_CODE == 'nl' %}selected{% endif %}>Nederlands</option>
+                </select>
+                <input type="hidden" name="next" value="{{ request.path }}">
+            </form>
+        </header>
+
+        <!-- محتوى ديناميكي -->
+        <main class="p-4">
+            {% block content %}
+            {% endblock %}
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center text-xs text-gray-500 py-2">
+            &copy; {{ now.year }} - {% trans "All rights reserved" %}
+        </footer>
+    </div>
+
+    <!-- ✅ Sidebar للجوال -->
+    <div id="mobile-sidebar" class="fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform -translate-x-full transition-transform duration-200 z-50 lg:hidden">
+        <div class="p-4 font-bold border-b text-blue-700">{% trans "Menu" %}</div>
+        <nav class="p-4 space-y-2 text-sm">
+            <a href="{% url 'dashboard' %}" class="block hover:bg-blue-100 px-2 py-1 rounded">{% trans "Dashboard" %}</a>
+            <a href="{% url 'home' %}" class="block hover:bg-blue-100 px-2 py-1 rounded">{% trans "Home" %}</a>
+            <a href="{% url 'import_contacts' %}" class="block hover:bg-blue-100 px-2 py-1 rounded">{% trans "Import Contacts" %}</a>
+            <a href="{% url 'contact_list' %}" class="block hover:bg-blue-100 px-2 py-1 rounded">{% trans "Contacts" %}</a>
+            <a href="{% url 'create_campaign' %}" class="block hover:bg-blue-100 px-2 py-1 rounded">{% trans "Create Campaign" %}</a>
+            <a href="{% url 'campaign_list' %}" class="block hover:bg-blue-100 px-2 py-1 rounded">{% trans "Campaigns" %}</a>
+            <a href="{% url 'reports' %}" class="block hover:bg-blue-100 px-2 py-1 rounded">{% trans "reports" %}</a>
+            <a href="{% url 'top_campaign' %}" class="block hover:bg-blue-100 px-2 py-1 rounded">{% trans "Top Campaign" %}</a>
+        </nav>
+    </div>
+
+    <!-- ✅ Script لإظهار القائمة الجانبية في الجوال -->
+    <script>
+        const toggle = document.getElementById('menu-toggle');
+        const mobileSidebar = document.getElementById('mobile-sidebar');
+
+        toggle.addEventListener('click', () => {
+            if (mobileSidebar.classList.contains('-translate-x-full')) {
+                mobileSidebar.classList.remove('-translate-x-full');
+            } else {
+                mobileSidebar.classList.add('-translate-x-full');
+            }
+        });
+    </script>
+
+</body>
+</html>

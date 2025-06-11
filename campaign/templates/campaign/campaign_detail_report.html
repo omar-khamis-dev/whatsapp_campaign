@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Campaign Reports:" %} {{ campaign.name }} {% endblock %}
+{% block page_title %} {{ page_title }} {% endblock %}
+{% block content %}
+<div class="p-6">
+    <h1 class="text-xl font-semibold mb-4">
+        {% trans "Campaign Report:" %} {{ campaign.name }}
+    </h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="border p-4 rounded shadow">
+            <h2 class="font-bold mb-2">{% trans "Status Summary" %}</h2>
+            <ul>
+                <li>{% trans "Sent" %}: {{ status_summary.sent|default:"0" }}</li>
+                <li>{% trans "Failed" %}: {{ status_summary.failed|default:"0" }}</li>
+                <li>{% trans "Pending" %}: {{ status_summary.pending|default:"0" }}</li>
+            </ul>
+        </div>
+        <div class="border p-4 rounded shadow">
+            <h2 class="font-bold mb-2">{% trans "Reactions" %}</h2>
+            <ul>
+                <li>{% trans "Sent but not delivered" %}: {{ reaction_summary.not_delivered|default:"0" }}</li>
+                <li>{% trans "Delivered, unread" %}: {{ reaction_summary.delivered_unread|default:"0" }}</li>
+                <li>{% trans "Read" %}: {{ reaction_summary.read|default:"0" }}</li>
+                <li>{% trans "Replied" %}: {{ reaction_summary.replied|default:"0" }}</li>
+                <li>{% trans "Reacted" %}: {{ reaction_summary.reacted|default:"0" }}</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="overflow-auto">
+        <table class="w-full text-sm border border-gray-300">
+            <thead class="bg-gray-100 text-left">
+                <tr>
+                    <th class="p-2">{% trans "Recipient" %}</th>
+                    <th class="p-2">{% trans "Status" %}</th>
+                    <th class="p-2">{% trans "Reaction" %}</th>
+                    <th class="p-2">{% trans "Sent At" %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for msg in messages %}
+                <tr class="border-t">
+                    <td class="p-2">{{ msg.recipient }}</td>
+                    <td class="p-2">{{ msg.get_status_display }}</td>
+                    <td class="p-2">{{ msg.get_reaction_status_display|default:"-" }}</td>
+                    <td class="p-2">{{ msg.sent_at|date:"Y-m-d H:i" }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

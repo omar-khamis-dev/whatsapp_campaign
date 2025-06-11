@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-30 18:34+0300\n"
+"POT-Creation-Date: 2025-06-11 04:22+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,58 +18,401 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\campaign\templates\campaign\dashboard.html:7
-#: .\campaign\templates\campaign\dashboard.html:18 .\campaign\views.py:10
-msgid "Dashboard"
-msgstr "Dashboard"
+#: .\campaign\forms.py:8
+msgid "Contact file"
+msgstr "Contactbestand"
 
-#: .\campaign\templates\campaign\dashboard.html:36
-msgid "Users"
-msgstr "Gebruikers"
+#: .\campaign\forms.py:9
+msgid "Choose a CSV, Excel, or VCF file (.csv, .xlsx, .vcf)"
+msgstr "Kies een CSV-, Excel- of VCF -bestand (.csv, .xlsx, .vcf)"
 
-#: .\campaign\templates\campaign\dashboard.html:37
+#: .\campaign\forms.py:14
+msgid "Group name"
+msgstr "Groepsnaam"
+
+#: .\campaign\forms.py:16 .\campaign\forms.py:28
+#: .\campaign\templates\campaign\campaign_list.html:20
+msgid "Group"
+msgstr "Groep"
+
+#: .\campaign\forms.py:17
+msgid "A new group will be created automatically. You can rename it."
+msgstr "Een nieuwe groep wordt automatisch gemaakt.U kunt het hernoemen."
+
+#: .\campaign\forms.py:23
+msgid "Search by name, phone, or email"
+msgstr "Zoek op naam, telefoon of e -mail"
+
+#: .\campaign\forms.py:31
+msgid "All groups"
+msgstr "Alle groepen"
+
+#: .\campaign\forms.py:35 .\campaign\models.py:50
+#: .\campaign\templates\campaign\campaign_detail_report.html:38
+#: .\campaign\templates\campaign\campaign_list.html:22
+#: .\campaign\templates\campaign\contact_list.html:67
+#: .\campaign\templates\campaign\top_campaign.html:17
+msgid "Status"
+msgstr "Status"
+
+#: .\campaign\forms.py:36
+msgid "All statuses"
+msgstr "Alle statussen"
+
+#: .\campaign\forms.py:41 .\campaign\templates\campaign\contact_list.html:69
+msgid "Gender"
+msgstr "Geslacht"
+
+#: .\campaign\forms.py:43
+msgid "All"
+msgstr "Alle"
+
+#: .\campaign\forms.py:44
+msgid "Male"
+msgstr "Mannelijk"
+
+#: .\campaign\forms.py:45
+msgid "Female"
+msgstr "Vrouwelijk"
+
+#: .\campaign\forms.py:59 .\campaign\models.py:45
+#: .\campaign\templates\campaign\campaign_reports.html:13
+#: .\campaign\templates\campaign\create_campaign.html:13
+msgid "Campaign Name"
+msgstr "Campagnenaam"
+
+#: .\campaign\forms.py:60 .\campaign\models.py:46
+#: .\campaign\templates\campaign\create_campaign.html:17
+msgid "Target Group"
+msgstr "Doelgroep"
+
+#: .\campaign\forms.py:61 .\campaign\models.py:47
+#: .\campaign\templates\campaign\create_campaign.html:21
+msgid "Message Text"
+msgstr "Berichttekst"
+
+#: .\campaign\forms.py:62
+#: .\campaign\templates\campaign\create_campaign.html:25
+msgid "Attachment"
+msgstr "Bijlage"
+
+#: .\campaign\forms.py:63 .\campaign\models.py:49
+#: .\campaign\templates\campaign\create_campaign.html:29
+msgid "Scheduled Date & Time"
+msgstr "Geplande datum en tijd"
+
+#: .\campaign\migrations\0001_initial.py:28 .\campaign\models.py:12
+msgid "Not sent"
+msgstr "Niet verzonden"
+
+#: .\campaign\migrations\0001_initial.py:29 .\campaign\models.py:13
+#: .\campaign\templates\campaign\campaign_detail_report.html:16
+#: .\campaign\templates\campaign\campaign_reports.html:14
+msgid "Sent"
+msgstr "Verstuurd"
+
+#: .\campaign\migrations\0001_initial.py:30 .\campaign\models.py:14
+msgid "Rejected"
+msgstr "Afgewezen"
+
+#: .\campaign\models.py:40
+#: .\campaign\templates\campaign\campaign_detail_report.html:18
+#: .\campaign\templates\campaign\campaign_list.html:34
+msgid "Pending"
+msgstr "In behandeling"
+
+#: .\campaign\models.py:41 .\campaign\templates\campaign\campaign_list.html:36
+msgid "Sending"
+msgstr "Verzending"
+
+#: .\campaign\models.py:42 .\campaign\templates\campaign\campaign_list.html:38
+msgid "Completed"
+msgstr "Voltooid"
+
+#: .\campaign\models.py:43
+#: .\campaign\templates\campaign\campaign_detail_report.html:17
+#: .\campaign\templates\campaign\campaign_list.html:40
+#: .\campaign\templates\campaign\campaign_reports.html:15
+msgid "Failed"
+msgstr "Mislukt"
+
+#: .\campaign\models.py:48
+msgid "Attachment (optional)"
+msgstr "Bijlage (optioneel)"
+
+#: .\campaign\models.py:54
+msgid "Campaign"
+msgstr "Campagne"
+
+#: .\campaign\models.py:55 .\campaign\templates\base.html:38
+#: .\campaign\templates\base.html:91
+#: .\campaign\templates\campaign\campaign_list.html:4
+#: .\campaign\templates\campaign\campaign_list.html:9
+#: .\campaign\templates\campaign\dashboard.html:67 .\campaign\views.py:234
 msgid "Campaigns"
 msgstr "Campagnes"
 
-#: .\campaign\templates\campaign\dashboard.html:38
-msgid "Messages Sent"
-msgstr "Berichten verzonden"
+#: .\campaign\templates\base.html:7 .\campaign\templates\base.html:54
+msgid "WhatsApp Campaign System"
+msgstr "Whatsapp -campagneemsel"
 
-#: .\campaign\templates\campaign\dashboard.html:39
-msgid "Success Rate"
-msgstr "Slagingspercentage"
+#: .\campaign\templates\base.html:30 .\campaign\templates\base.html:84
+msgid "Menu"
+msgstr "Menu"
 
-#: .\campaign\templates\campaign\dashboard.html:43
-msgid "Recent Activity"
-msgstr "Recente activiteit"
+#: .\campaign\templates\base.html:33 .\campaign\templates\base.html:86
+#: .\campaign\templates\campaign\dashboard.html:4
+#: .\campaign\templates\campaign\dashboard.html:47 .\campaign\views.py:42
+msgid "Dashboard"
+msgstr "Dashboard"
 
-#: .\campaign\templates\campaign\dashboard.html:45
-msgid "Campaign 'Ramadan Offer' sent to 5,000 users"
-msgstr "Campagne 'Ramadan -aanbieding' verzonden naar 5.000 gebruikers"
-
-#: .\campaign\templates\campaign\dashboard.html:46
-msgid "New user 'admin@domain.com' registered"
-msgstr "Nieuwe gebruiker 'admin@domain.com' geregistreerd"
-
-#: .\campaign\templates\campaign\dashboard.html:47
-msgid "Database backup completed"
-msgstr "Database -back -up is voltooid"
-
-#: .\campaign\templates\campaign\home.html:6
+#: .\campaign\templates\base.html:34 .\campaign\templates\base.html:87
+#: .\campaign\templates\campaign\home.html:4 .\campaign\views.py:17
 msgid "Home"
 msgstr "Thuis"
 
-#: .\campaign\templates\campaign\home.html:34
+#: .\campaign\templates\base.html:35 .\campaign\templates\base.html:88
+#: .\campaign\templates\campaign\import_contacts.html:5
+#: .\campaign\templates\campaign\import_contacts.html:41
+#: .\campaign\views.py:55
+msgid "Import Contacts"
+msgstr "Contacten importeren"
+
+#: .\campaign\templates\base.html:36 .\campaign\templates\base.html:89
+msgid "Contacts"
+msgstr "Contacten"
+
+#: .\campaign\templates\base.html:37 .\campaign\templates\base.html:90
+#: .\campaign\templates\campaign\create_campaign.html:4
+#: .\campaign\templates\campaign\create_campaign.html:33
+msgid "Create Campaign"
+msgstr "Campagne maken"
+
+#: .\campaign\templates\base.html:39
+#: .\campaign\templates\campaign\campaign_reports.html:4
+#: .\campaign\templates\campaign\campaign_reports.html:8
+#: .\campaign\views.py:239 .\campaign\views.py:260
+msgid "Campaign Reports"
+msgstr "Campagneveldrapporten"
+
+#: .\campaign\templates\base.html:40 .\campaign\templates\base.html:93
+msgid "Top Campaign"
+msgstr "Topcampagne"
+
+#: .\campaign\templates\base.html:78
+msgid "All rights reserved"
+msgstr "Alle rechten voorbehouden"
+
+#: .\campaign\templates\base.html:92
+msgid "reports"
+msgstr "rapporten"
+
+#: .\campaign\templates\campaign\campaign_detail_report.html:4
+msgid "Campaign Reports:"
+msgstr "Campagneveldrapporten:"
+
+#: .\campaign\templates\campaign\campaign_detail_report.html:9
+msgid "Campaign Report:"
+msgstr "Campagneverslag:"
+
+#: .\campaign\templates\campaign\campaign_detail_report.html:14
+msgid "Status Summary"
+msgstr "Statusoverzicht"
+
+#: .\campaign\templates\campaign\campaign_detail_report.html:22
+msgid "Reactions"
+msgstr "Reacties"
+
+#: .\campaign\templates\campaign\campaign_detail_report.html:24
+msgid "Sent but not delivered"
+msgstr "Verzonden maar niet geleverd"
+
+#: .\campaign\templates\campaign\campaign_detail_report.html:25
+msgid "Delivered, unread"
+msgstr "Geleverd, ongelezen"
+
+#: .\campaign\templates\campaign\campaign_detail_report.html:26
+msgid "Read"
+msgstr "Lezen"
+
+#: .\campaign\templates\campaign\campaign_detail_report.html:27
+msgid "Replied"
+msgstr "Antwoordde"
+
+#: .\campaign\templates\campaign\campaign_detail_report.html:28
+msgid "Reacted"
+msgstr "Reageren"
+
+#: .\campaign\templates\campaign\campaign_detail_report.html:37
+msgid "Recipient"
+msgstr "Ontvanger"
+
+#: .\campaign\templates\campaign\campaign_detail_report.html:39
+msgid "Reaction"
+msgstr "Reactie"
+
+#: .\campaign\templates\campaign\campaign_detail_report.html:40
+msgid "Sent At"
+msgstr "Verzonden naar"
+
+#: .\campaign\templates\campaign\campaign_list.html:11
+msgid "New Campaign"
+msgstr "Nieuwe campagne"
+
+#: .\campaign\templates\campaign\campaign_list.html:19
+msgid "Name"
+msgstr "Naam"
+
+#: .\campaign\templates\campaign\campaign_list.html:21
+#: .\campaign\templates\campaign\top_campaign.html:14
+msgid "Scheduled At"
+msgstr "Gepland op"
+
+#: .\campaign\templates\campaign\campaign_list.html:23
+msgid "Actions"
+msgstr "Acties"
+
+#: .\campaign\templates\campaign\campaign_list.html:44
+msgid "Start"
+msgstr "Begin"
+
+#: .\campaign\templates\campaign\campaign_list.html:46
+msgid "Details"
+msgstr "Details"
+
+#: .\campaign\templates\campaign\campaign_list.html:51
+#: .\campaign\templates\campaign\campaign_reports.html:31
+msgid "No campaigns found."
+msgstr "Geen campagnes gevonden."
+
+#: .\campaign\templates\campaign\campaign_reports.html:16
+msgid "Duration (s)"
+msgstr "Duur (s)"
+
+#: .\campaign\templates\campaign\campaign_reports.html:17
+#, fuzzy, python-format
+#| msgid "Success Rate"
+msgid "Success Rate (%%)"
+msgstr "Slagingspercentage"
+
+#: .\campaign\templates\campaign\contact_list.html:4
+#: .\campaign\templates\campaign\contact_list.html:59 .\campaign\views.py:183
+msgid "Contact List"
+msgstr "Contactlijst"
+
+#: .\campaign\templates\campaign\contact_list.html:46
+msgid "Search Contacts"
+msgstr "Zoek contacten"
+
+#: .\campaign\templates\campaign\contact_list.html:53
+msgid "Search"
+msgstr "Zoekopdracht"
+
+#: .\campaign\templates\campaign\contact_list.html:64
+msgid "Full Name"
+msgstr "Volledige naam"
+
+#: .\campaign\templates\campaign\contact_list.html:65
+msgid "Phone Number"
+msgstr "Telefoonnummer"
+
+#: .\campaign\templates\campaign\contact_list.html:66
+msgid "Email"
+msgstr "E -mail"
+
+#: .\campaign\templates\campaign\contact_list.html:68
+msgid "Groups"
+msgstr "Groepen"
+
+#: .\campaign\templates\campaign\contact_list.html:70
+msgid "Interests"
+msgstr "Belangen"
+
+#: .\campaign\templates\campaign\contact_list.html:92
+msgid "No contacts found."
+msgstr "Geen contacten gevonden."
+
+#: .\campaign\templates\campaign\create_campaign.html:8
+#: .\campaign\views.py:218
+msgid "Create New Campaign"
+msgstr "Creëer een nieuwe campagne"
+
+#: .\campaign\templates\campaign\dashboard.html:52
+msgid "Total Contacts"
+msgstr "Totale contacten"
+
+#: .\campaign\templates\campaign\dashboard.html:57
+msgid "Total Groups"
+msgstr "Totaal aantal groepen"
+
+#: .\campaign\templates\campaign\dashboard.html:62
+msgid "Messages Sent"
+msgstr "Berichten verzonden"
+
+#: .\campaign\templates\campaign\dashboard.html:72
+msgid "Users"
+msgstr "Gebruikers"
+
+#: .\campaign\templates\campaign\dashboard.html:77
+msgid "Success Rate"
+msgstr "Slagingspercentage"
+
+#: .\campaign\templates\campaign\home.html:45
 msgid "Choose your language:"
 msgstr "Kies uw taal:"
 
-#: .\campaign\templates\campaign\home.html:45
+#: .\campaign\templates\campaign\home.html:56
 msgid "Change language"
 msgstr "Verander taal"
 
-#: .\campaign\views.py:5
+#: .\campaign\templates\campaign\import_contacts.html:53
+msgid "Choose File (CSV or Excel)"
+msgstr "Kies bestand (CSV of Excel)"
+
+#: .\campaign\templates\campaign\import_contacts.html:57
+msgid "Group Name (optional)"
+msgstr "Groepsnaam (optioneel)"
+
+#: .\campaign\templates\campaign\import_contacts.html:62
+msgid "Preview Data"
+msgstr "Voorbeeldgegevens"
+
+#: .\campaign\templates\campaign\import_contacts.html:67
+msgid "Preview of the first 50 contacts"
+msgstr "Voorbeeld van de eerste 50 contacten"
+
+#: .\campaign\templates\campaign\import_contacts.html:72
+msgid "Save Contacts"
+msgstr "Bewaar contacten"
+
+#: .\campaign\templates\campaign\top_campaign.html:4
+#: .\campaign\templates\campaign\top_campaign.html:8 .\campaign\views.py:281
+msgid "Top Engaged Campaign"
+msgstr "Top Engaged Campaign"
+
+#: .\campaign\templates\campaign\top_campaign.html:20
+msgid "Engagement Score"
+msgstr "Verlovingsscore"
+
+#: .\campaign\templates\campaign\top_campaign.html:25
+msgid "View Full Report"
+msgstr "Bekijk het volledige rapport"
+
+#: .\campaign\templates\campaign\top_campaign.html:30
+msgid "No campaigns with engagement data available."
+msgstr "Geen campagnes met beschikbare engagementgegevens."
+
+#: .\campaign\views.py:18
 msgid "Welcome to the WhatsApp Campaign System"
 msgstr "Welkom bij het WhatsApp-campagnesysteem"
+
+#: .\campaign\views.py:95
+msgid "Contacts have been saved successfully."
+msgstr "Contacten zijn met succes opgeslagen."
+
+#: .\campaign\views.py:223
+msgid "Campaign created successfully."
+msgstr "Campagne is met succes gecreëerd."
 
 #: .\whatsapp_campaign\settings.py:121
 msgid "English"
@@ -86,3 +429,36 @@ msgstr "Duits"
 #: .\whatsapp_campaign\settings.py:124
 msgid "Dutch"
 msgstr "Nederlands"
+
+#~ msgid "Monthly Message Stats"
+#~ msgstr "Maandelijkse berichtstatistieken"
+
+#~ msgid "My System"
+#~ msgstr "Mijn systeem"
+
+#~ msgid "Developed by"
+#~ msgstr "Ontwikkeld door"
+
+#~ msgid "Recent Activity"
+#~ msgstr "Recente activiteit"
+
+#~ msgid "Campaign 'Ramadan Offer' sent to 5,000 users"
+#~ msgstr "Campagne 'Ramadan -aanbieding' verzonden naar 5.000 gebruikers"
+
+#~ msgid "New user 'admin@domain.com' registered"
+#~ msgstr "Nieuwe gebruiker 'admin@domain.com' geregistreerd"
+
+#~ msgid "Database backup completed"
+#~ msgstr "Database -back -up is voltooid"
+
+#~ msgid "Welcome to the system"
+#~ msgstr "Welkom bij het systeem"
+
+#~ msgid "Use the menu above to navigate through the system."
+#~ msgstr "Gebruik het bovenstaande menu om door het systeem te navigeren."
+
+#~ msgid "Missing required columns: full_name, phone_number"
+#~ msgstr "Ontbrekende vereiste kolommen: full_name, telefoon_nummer"
+
+#~ msgid "Error reading file: "
+#~ msgstr "Fout lezen Bestand:"
