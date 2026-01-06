@@ -192,9 +192,9 @@ def contact_list(request):
 
         if query:
             contacts = contacts.filter(
-                models.Q(full_name__icontains=query) |
-                models.Q(phone_number__icontains=query) |
-                models.Q(email__icontains=query)
+                Q(full_name__icontains=query) |
+                Q(phone_number__icontains=query) |
+                Q(email__icontains=query)
             )
 
         if group:
